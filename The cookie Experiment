@@ -1,7 +1,7 @@
 // In this project I code the steps needed to eat 99.9% of a cookie if your bite is in relation to the rest of the cookie
 // For example, you have a 50g cookie, and you bite for 4g, so your bite is 8% of the cookie, so, the cookie now has 46g,
 // but your bite is now 3.68g (8% of 46g), how many bites you need to eat 99.9% of the cookie? This can done mathematically,
-// but computing it is funnier, besides infinite sums are a pain to do. By the way, the answer is... run this script and find out.
+// but computing it is funnier, besides infinite sums are a pain to do**. By the way, the answer is... run this script and find out.
 // I kid, it's 83 bites, and the lastly you bit for 0.00394866g.
 
 #include <iostream> 
@@ -28,3 +28,10 @@ int main()
 	std::cin.get();
 		
 	}
+
+// ** (on 12/03/2020) Upon reading this again, I realised that this, 
+// while managed to see the iterations and their values, made the actual
+// calculation of the end value slower. A smarter approach would be calculating
+// as such: total bites = ceiling(log(stop amount limit)/log(1 - the relative size of the bite))
+// stop amount limit = 0.001 => log(0.001) = -3
+// example for the 8% bite => total bites = ceiling(-3/log(0.92)) = 83
